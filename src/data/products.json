@@ -1,0 +1,1556 @@
+[
+  {
+    "id": "001011",
+    "name": "ACEITE CANOLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001039",
+    "name": "ACEITE DE OLIVA 400GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001007",
+    "name": "ACEITE EN AEROSOL",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001117",
+    "name": "AGAR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "10"
+  },
+  {
+    "id": "001004",
+    "name": "AGUA BOTELLA 500ML",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001044",
+    "name": "AJONJOLI",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001111",
+    "name": "AJONJOLI",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001051",
+    "name": "ALMENDRA FILETEADA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001045",
+    "name": "ANIS 60GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001114",
+    "name": "ARROZ",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001121",
+    "name": "AZUCAR BLANCA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001019",
+    "name": "AZUCAR MASCABADO 2KG",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001070",
+    "name": "AZUCAR MORENA ZULKA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001082",
+    "name": "AZUCAR MORENA ZULKA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001012",
+    "name": "AZUCAR ZULKA 1KG",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001037",
+    "name": "BICARBONATO 150GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001104",
+    "name": "BOLSA FRIJOL PINTO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001075",
+    "name": "BOLSAS TRANSPARENTES",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001101",
+    "name": "BOTE DE ACEITUNA VERDE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001087",
+    "name": "BOTE DE CASCARA DE PLATANO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001047",
+    "name": "CACAHUATE 100GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001120",
+    "name": "CACAHUATE TOSTADO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001105",
+    "name": "CAFE ENTERO DE GRANO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001069",
+    "name": "CAFE MOL.IDO KIRKLAND",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001068",
+    "name": "CAFE PURO TOSTADO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001058",
+    "name": "CAJA DE AZUCAR MASCABADO SUGAR IN THE ROW",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001138",
+    "name": "CAJA DE BOLSA DE BASURA XL 50PZ",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001071",
+    "name": "CAJETA QUEMADA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001115",
+    "name": "CANEL ENTERA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "10"
+  },
+  {
+    "id": "001049",
+    "name": "CANELA ENTERA 150GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001118",
+    "name": "CANELA MOLIDA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "10"
+  },
+  {
+    "id": "001096",
+    "name": "CAPITAN MORGAN BOTELLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001064",
+    "name": "CATSUP EN SOBRES",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001100",
+    "name": "CEREZA BOTE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001026",
+    "name": "CERVEZA BOTELLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001038",
+    "name": "CHILE CHIPOTLE 430 GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001107",
+    "name": "CHILE GUAJILLO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001109",
+    "name": "CHILE PASILLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001062",
+    "name": "CHOCOLATE ABUELITA EN POLVO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "10"
+  },
+  {
+    "id": "001066",
+    "name": "CHOCOLATE EN POLVO NESQUIK",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001133",
+    "name": "CHOCOMILK",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001046",
+    "name": "CLSAVO 70GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001001",
+    "name": "COCA COLA ORIGINAL 355 ML",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001073",
+    "name": "COLOMBIA SUPREMO JOSES GORNET COFFEE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001093",
+    "name": "CONCHITAS",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001086",
+    "name": "CREMA DE COCO BOTE CALAHUA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001009",
+    "name": "CREMA DULCE LYNCOTT",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001088",
+    "name": "CREMA GREATVALUE CALABAZA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001092",
+    "name": "CREMA LYNCOTT",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001043",
+    "name": "CRISCO 3KG",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001095",
+    "name": "ELOTE AMARILLLO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001059",
+    "name": "ENDULZANTE STEVIA SUGAR IN THE ROW",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001034",
+    "name": "ESCENCIA DE VAINILLA 500ML",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001029",
+    "name": "ESPINACA PAQUETE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001139",
+    "name": "ESPONJA AMARILLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001136",
+    "name": "ESPONJAS SCRUB DADDY",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001023",
+    "name": "FRIJOL PINTO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001113",
+    "name": "FRIJOL SAN LAZARO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001057",
+    "name": "GALON DE AGUA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001036",
+    "name": "GLOCOSA 2 LT",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001067",
+    "name": "GRANOL.A KIRKLAND",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001050",
+    "name": "GRANOLA 1G",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001125",
+    "name": "GRENETINA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001106",
+    "name": "HARINA 25KG",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001042",
+    "name": "HARINA TODO USO 5KG",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001099",
+    "name": "HIELO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001122",
+    "name": "HOJA DE LAUREL",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "10"
+  },
+  {
+    "id": "001126",
+    "name": "HOJA SANTA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "10"
+  },
+  {
+    "id": "001030",
+    "name": "JENGIBRE FRASCO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001020",
+    "name": "JOCOQUE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001083",
+    "name": "JUGO DE NARANJA JUMEX",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001085",
+    "name": "LECHE DE ALMENDRA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001089",
+    "name": "LECHE DE ALMENDRA CALIFIA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001079",
+    "name": "LECHE DE AVENA OATLY",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001080",
+    "name": "LECHE DE SOYA KIRKLAND",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001081",
+    "name": "LECHE DESLACTOSADA KIRKLAND",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001078",
+    "name": "LECHE ENTERA KIRKLAND",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001084",
+    "name": "LECHE EVAPORADA CARNATION",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001119",
+    "name": "LEVADURA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001048",
+    "name": "LEVADURA 170GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001006",
+    "name": "LICOR 43",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001097",
+    "name": "LICOR DE VAINILLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001135",
+    "name": "LIMPIAVIDRIO POWEROSO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001137",
+    "name": "LYSOL",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001134",
+    "name": "MATCHA EN POLVO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001063",
+    "name": "MIEL DE ABEJ KIRKLAND",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001052",
+    "name": "MIEL DE ABEJA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001110",
+    "name": "MIL DE MAPLE KIRKLAND",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001072",
+    "name": "NUTELLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001132",
+    "name": "PALILLOS",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001091",
+    "name": "PAN BRIOCHE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001090",
+    "name": "PAN DE MASA MADRE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001003",
+    "name": "PAPEL HIGIENICO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001033",
+    "name": "PASTA DE VAINILLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001116",
+    "name": "PEPITAS",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "10"
+  },
+  {
+    "id": "001031",
+    "name": "PIEZA DE PAN HOGAZA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001032",
+    "name": "PILONCILLO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001127",
+    "name": "PILONCILLO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001124",
+    "name": "PIMIENTA MOLIDA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001131",
+    "name": "PIMIENTA NEGRA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001102",
+    "name": "PIMIENTA NEGRA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001040",
+    "name": "PIMIENTA NEGRA 400 GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001010",
+    "name": "PLASTICO PARA ENVOLVER",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001021",
+    "name": "QUESO GUZMAN ANEJO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001008",
+    "name": "QUESO MOZARELLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001024",
+    "name": "QUESO TIPO REQUESON",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001123",
+    "name": "SAL DE NITRO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001056",
+    "name": "SAL MADON ESCAMAS 570GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001022",
+    "name": "SALSA CASERA HERDEZ",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001128",
+    "name": "SALSA DE SOJA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001108",
+    "name": "SEMILLAS DE CALABAZA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001041",
+    "name": "SEMILLAS DE CILANTRO 800GR",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001112",
+    "name": "SO DE FIDEO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001065",
+    "name": "SOBRE CHAMBA CHAI SPECIAL LATTE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001061",
+    "name": "SOBRE NUECES CASTILLA KIRKLAND",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001060",
+    "name": "SOBRE NUECES WALLNUT PIECES",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001005",
+    "name": "TOALLA GREYMOON",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001098",
+    "name": "TORTILLA",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "KGS"
+  },
+  {
+    "id": "001074",
+    "name": "VANILLA BEEN GOOSE CREEK",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001076",
+    "name": "VASO DE PLASTICO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001130",
+    "name": "VINAGRE DE ARROZ",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "LTS"
+  },
+  {
+    "id": "001129",
+    "name": "VINAGRE DE VINO BLNCO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "LTS"
+  },
+  {
+    "id": "001035",
+    "name": "VINAGRE VINO BLANCO 400ML",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001140",
+    "name": "VINGRE BLANCO",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "LTS"
+  },
+  {
+    "id": "001027",
+    "name": "YOGURT GRIEGO PZ",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "001028",
+    "name": "ZANAHORIA PAQUETE",
+    "category": "ABARROTES",
+    "group": "001",
+    "unit": "PZA"
+  },
+  {
+    "id": "004003",
+    "name": "AGUA MINERAL CABONATADA MINERAL WATER",
+    "category": "BEBIDAS",
+    "group": "004",
+    "unit": "PZA"
+  },
+  {
+    "id": "001077",
+    "name": "AGUA MINERAL CARBONATADA TOPOCHICO",
+    "category": "BEBIDAS",
+    "group": "004",
+    "unit": "PZA"
+  },
+  {
+    "id": "004004",
+    "name": "AGUA NATURAL KIRKLAND",
+    "category": "BEBIDAS",
+    "group": "004",
+    "unit": "PZA"
+  },
+  {
+    "id": "004008",
+    "name": "ASOLO PROSECO KIRKLAND",
+    "category": "BEBIDAS",
+    "group": "004",
+    "unit": "PZA"
+  },
+  {
+    "id": "004006",
+    "name": "COCA COLA ORIGINAL",
+    "category": "BEBIDAS",
+    "group": "004",
+    "unit": "PZA"
+  },
+  {
+    "id": "004007",
+    "name": "COCA COLA ZERO",
+    "category": "BEBIDAS",
+    "group": "004",
+    "unit": "PZA"
+  },
+  {
+    "id": "004001",
+    "name": "CREMA BAILEYS",
+    "category": "BEBIDAS",
+    "group": "004",
+    "unit": "PZA"
+  },
+  {
+    "id": "004002",
+    "name": "JUGO DE NARANJA",
+    "category": "BEBIDAS",
+    "group": "004",
+    "unit": "PZA"
+  },
+  {
+    "id": "003007",
+    "name": "BOLSA DE CHICHARRON",
+    "category": "EMBUTIDOS Y CARNE PROCESADA",
+    "group": "003",
+    "unit": "PZA"
+  },
+  {
+    "id": "003005",
+    "name": "CHILORIO",
+    "category": "EMBUTIDOS Y CARNE PROCESADA",
+    "group": "003",
+    "unit": "PZA"
+  },
+  {
+    "id": "003001",
+    "name": "MACHACA BOLSA",
+    "category": "EMBUTIDOS Y CARNE PROCESADA",
+    "group": "003",
+    "unit": "PZA"
+  },
+  {
+    "id": "003006",
+    "name": "MANTECA DE CERDO",
+    "category": "EMBUTIDOS Y CARNE PROCESADA",
+    "group": "003",
+    "unit": "KGS"
+  },
+  {
+    "id": "003002",
+    "name": "PESCADO",
+    "category": "EMBUTIDOS Y CARNE PROCESADA",
+    "group": "003",
+    "unit": "KGS"
+  },
+  {
+    "id": "003003",
+    "name": "QUESO MOZZARELLA",
+    "category": "EMBUTIDOS Y CARNE PROCESADA",
+    "group": "003",
+    "unit": "KGS"
+  },
+  {
+    "id": "003004",
+    "name": "QUESO SECO",
+    "category": "EMBUTIDOS Y CARNE PROCESADA",
+    "group": "003",
+    "unit": "KGS"
+  },
+  {
+    "id": "002023",
+    "name": "AGUACATE",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002001",
+    "name": "AGUACATE EXTRA LIMPIO 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002024",
+    "name": "APIO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "PZA"
+  },
+  {
+    "id": "002019",
+    "name": "BETABEL KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002027",
+    "name": "BETBEL",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002030",
+    "name": "BOLSA ESPINACAS",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "PZA"
+  },
+  {
+    "id": "002020",
+    "name": "BOTE FRESAS PICADAS",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "PZA"
+  },
+  {
+    "id": "001094",
+    "name": "BROCOLI",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "001018",
+    "name": "CEBOLLA BLANCA GRANDE 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002040",
+    "name": "CEBOLLA MORADA",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002009",
+    "name": "CEBOLLA MORADA 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "PZA"
+  },
+  {
+    "id": "002038",
+    "name": "CEBOLLA PICADA",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002036",
+    "name": "CHAMPIÑONES",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "001015",
+    "name": "CHILE JALAPENO 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002013",
+    "name": "CHILE MORRON AMARILLO 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002014",
+    "name": "CHILE MORRON ANARANJADO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002015",
+    "name": "CHILE MORRON ROJO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002016",
+    "name": "CHILE MORRON VERDE",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002033",
+    "name": "CHILE POBLANO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002035",
+    "name": "CHILE SERRANO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "001013",
+    "name": "CHILE SERRANO 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "001014",
+    "name": "DURAZNO USA 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002031",
+    "name": "DURAZNOS",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002008",
+    "name": "HUEVO CARTERA EMPLAYADO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "PZA"
+  },
+  {
+    "id": "002029",
+    "name": "JENGIBRE",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "001016",
+    "name": "LIMON AMARILLA KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002022",
+    "name": "LIMON AMARILLO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002034",
+    "name": "LIMON MEXICANO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "001017",
+    "name": "LIMON MEXICANO 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002028",
+    "name": "MANZANA VERDE",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002011",
+    "name": "MAZO DE CILANTRO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "PZA"
+  },
+  {
+    "id": "002018",
+    "name": "MENTA FRESCA LIBRA",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "LBS"
+  },
+  {
+    "id": "002021",
+    "name": "NARANJA SUELTA",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002012",
+    "name": "NARANJA VALENCIA 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002039",
+    "name": "PAPAS CORTADAS",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002026",
+    "name": "PEPINO",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002037",
+    "name": "PIMIENTOS PICADOS",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002010",
+    "name": "TOMAILLO PELADO 1KG",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "002017",
+    "name": "TOMATE BULE EN CAJA",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "PZA"
+  },
+  {
+    "id": "002025",
+    "name": "ZANAHORIA",
+    "category": "FRUTAS Y VERDURAS",
+    "group": "002",
+    "unit": "KGS"
+  },
+  {
+    "id": "005043",
+    "name": "AXION TRICLORO",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "LTS"
+  },
+  {
+    "id": "005025",
+    "name": "BOLSA DE PAPEL",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005024",
+    "name": "BOTE DE PLASTICO",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005039",
+    "name": "CABEZA DE TRAPEADOR",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "001054",
+    "name": "CAMBRO",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005027",
+    "name": "CHAROLA DE CARTON PARAVASO",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005028",
+    "name": "CHAROLA DE PLASTICO PARA LLEVAR",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005040",
+    "name": "CLORO DE NARANJA",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "LTS"
+  },
+  {
+    "id": "005011",
+    "name": "CLORO REGULAR",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005044",
+    "name": "CLOROX 10L",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "LTS"
+  },
+  {
+    "id": "005017",
+    "name": "CREAM CHARGERS ECO SERIES",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005018",
+    "name": "CUBREBOCAS",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005004",
+    "name": "CUCHARA EMPACADA MEDIANA",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005005",
+    "name": "CUCHILLO EMPACADO 100PZ",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005037",
+    "name": "DESENGRASANTE POWEROSO 1L",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005042",
+    "name": "DESINFETANTE DE LIMON LYSOL",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "LTS"
+  },
+  {
+    "id": "005010",
+    "name": "DETERGENTE EN POLVO",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "001055",
+    "name": "INSERTO 1/6",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005041",
+    "name": "LIMPIADADOR DE HORNPO Y ESTUFA",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "LTS"
+  },
+  {
+    "id": "001025",
+    "name": "LIMPIADOR",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005015",
+    "name": "MAMILAS 473ML",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005016",
+    "name": "MAMILAS 800ML",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005038",
+    "name": "MICRODYN 1L",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005033",
+    "name": "PAPEL DE PLASTICO PARA ENVOLVER",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "001103",
+    "name": "PAPEL PARA LIMPIAR KRAFT",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005045",
+    "name": "PINOL DE LITRO",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "LTS"
+  },
+  {
+    "id": "005026",
+    "name": "POPOTE",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005036",
+    "name": "REFRACTARIOS",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005007",
+    "name": "ROLLO TERMICO IMPRESORA",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "001002",
+    "name": "SERVILLETA",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005021",
+    "name": "SERVILLETAS KLEENEX",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005020",
+    "name": "SERVILLETAS SIMPLY VALUE",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005019",
+    "name": "SERVITOALLAS SCOTT SHOP 385PZ",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005032",
+    "name": "TAPA DE VASO DE CAFE",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005031",
+    "name": "TAPA DE VASO DE PLASTICO",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005023",
+    "name": "TAPAS DE CAFE",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005006",
+    "name": "TENEDOR EMPACADO MEDIANO 100PZ",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005035",
+    "name": "TRAPOS",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005029",
+    "name": "VASO DE PLASTICO TRANSPARENTE",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "005030",
+    "name": "VASO DE UNICEL",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  },
+  {
+    "id": "001053",
+    "name": "ZAPATERA 12L",
+    "category": "MATERIALES",
+    "group": "005",
+    "unit": "PZA"
+  }
+]
