@@ -1,17 +1,48 @@
 # Inventario QR
 
-Aplicación local de React + Vite para consultar los productos del inventario, ver el QR asociado a su clave y registrar existencias. Los datos se guardan en `localStorage` del navegador donde se abre la aplicación. La hoja original no incluye cantidades, así que los artículos empiezan con existencia cero.
+Demo local de React + Vite para consultar los productos del inventario, registrar capturas de empleados con QR y revisar el historial. Los registros se guardan en `localStorage` del navegador donde se abre la aplicación: no se comparten con otros equipos o navegadores. La hoja original no incluye cantidades.
 
 ## Iniciar la aplicación
 
 Requiere Node.js y npm. Desde la carpeta del proyecto:
 
 ```powershell
-npm install
-npm run dev
+npm.cmd install
+npm.cmd run dev
 ```
 
-Abre la dirección local que muestra Vite en la terminal. Para preparar una versión de producción, usa `npm run build`.
+Abre la dirección local que muestra Vite en la terminal. Para preparar una versión de producción, usa `npm.cmd run build`.
+
+## Iniciar sesión en la demo
+
+La pantalla de acceso incluye selectores de cuentas de prueba. También puedes usar estas cuentas:
+
+| Rol | Identificador | PIN |
+|---|---|---|
+| Administradora | `1001` | `1234` |
+| Registrador | `2001` | `1234` |
+| Registradora | `2002` | `1234` |
+
+El inicio de sesión, los roles y los PIN están simulados en el cliente para facilitar la demostración. **No son una medida de seguridad y no deben usarse para proteger datos reales.** No guardes PIN personales ni información sensible en esta demo.
+
+### Registradores
+
+- La cámara identifica el QR existente del producto; también se puede ingresar su clave manualmente.
+- La unidad de medida se toma del catálogo y no se puede cambiar al capturar.
+- Las cantidades para unidades `PZA` deben ser enteras; unidades como `KGS` aceptan decimales.
+- Al guardar, la cantidad debe ser mayor que cero. Una corrección de un producto ya capturado puede dejar su cantidad en cero.
+- Cada producto tiene una sola captura en la tarea de demostración. Al volver a escanearlo se muestra la cantidad previa; una corrección explícita actualiza el registro y añade al historial quién la hizo.
+- Se muestran los registros previos del empleado que inició sesión.
+
+### Administradores
+
+- Consulta los productos registrados, los pendientes y la actividad de cada empleado.
+- Revisa quién realizó la captura original, quién modificó la cantidad y el historial de cambios.
+- Usa **Catálogo QR** para ver el código asociado a cada clave y las cantidades registradas; exporta el historial a CSV.
+
+### Cámara en móvil
+
+El navegador solo permite utilizar la cámara en un contexto seguro: `localhost` o una dirección servida por **HTTPS**, y después de otorgar permiso. Una dirección de red local con HTTP normal puede impedir el acceso a la cámara; si eso ocurre, se puede buscar la clave manualmente.
 
 ## Actualizar los productos desde Excel
 
@@ -32,7 +63,13 @@ El importador reemplaza `src/data/products.json`; reinicia Vite para ver los nue
 
 ## Notas
 
-- Cada QR contiene la clave del producto, lista para escanear.
-- El filtro de stock bajo incluye existencias entre 1 y 5; el filtro de agotados muestra cantidades en cero.
-- **Exportar inventario** descarga un CSV con claves, productos y cantidades actuales.
-- El navegador no sincroniza ni comparte automáticamente los cambios entre computadoras o usuarios. Para uso compartido o multiusuario se necesitaría agregar una base de datos y un servidor.
+- Cada QR contiene la clave del producto y se reutiliza para contar sus existencias. No es necesario generar otro código por cada unidad encontrada.
+- La demo utiliza una sola tarea general. No declara tareas por zona ni coordina capturas simultáneas entre distintos equipos.
+- La versión anterior de cantidades se migra al historial local cuando se abre la demo por primera vez.
+- El navegador no sincroniza ni comparte automáticamente los cambios entre computadoras o usuarios.
+
+## Recomendación para el sistema central
+
+Cuando la demo se convierta en el sistema del equipo, una API y una base de datos compartida deberán validar los roles (no solo la interfaz), autenticar cada identificador con un PIN almacenado únicamente en forma segura, y guardar cada captura como un registro auditable. Para impedir duplicados simultáneos, la base de datos debe imponer una restricción única por **tarea + producto**, guardar cantidades y su unidad de catálogo y añadir cada corrección al historial dentro de una transacción. Si se divide el conteo entre registradores, las tareas deben asignar áreas o categorías y evitar asignaciones solapadas.
+
+El QR identifica el producto, no cada pieza. Solo hacen falta códigos únicos por unidad cuando se desea rastrear objetos individualmente (por ejemplo, equipo con número de serie), no para el conteo de existencias agrupadas que utiliza esta demo. Las cantidades de distintas unidades (por ejemplo, piezas y kilogramos) deben conservarse por separado, no sumarse como una cifra común.
