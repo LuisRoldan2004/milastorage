@@ -7,6 +7,7 @@ import {
   CircleAlert,
   ClipboardList,
   Download,
+  FileSpreadsheet,
   History,
   LogOut,
   PackageOpen,
@@ -14,6 +15,7 @@ import {
   Search,
   ShieldCheck,
   Smartphone,
+  Upload,
   UserRound,
   Users,
 } from "lucide-react";
@@ -22,6 +24,7 @@ import products from "./data/products.json";
 
 const STORAGE_KEY = "inventario-qr.registros.v1";
 const LEGACY_STORAGE_KEY = "inventario-qr.existencias.v1";
+const CATALOG_STORAGE_KEY = "inventario-qr.catalogo.v1";
 const DEMO_TASK_ID = "inventario-general-demo";
 const DEMO_TASK_NAME = "Inventario general · Demo";
 
@@ -46,7 +49,6 @@ const DEMO_USERS = [
   },
 ];
 
-const productById = new Map(products.map((product) => [product.id, product]));
 const dateFormatter = new Intl.DateTimeFormat("es-MX", {
   dateStyle: "medium",
   timeStyle: "short",
@@ -99,7 +101,38 @@ function parseRecords(raw) {
   return parsed.records;
 }
 
-function migrateLegacyRecords() {
+function isValidProduct(product) {
+  return (
+    product !== null &&
+    typeof product === "object" &&
+    typeof product.id === "string" &&
+    product.id.length > 0 &&
+    typeof product.name === "string" &&
+    product.name.length > 0 &&
+    typeof product.category === "string" &&
+    typeof product.group === "string" &&
+    typeof product.unit === "string"
+  );
+}
+
+function parseCatalog(raw) {
+  const parsed = JSON.parse(raw);
+  if (
+    parsed?.version !== 1 ||
+    !Array.isArray(parsed.products) ||
+    parsed.products.length === 0 ||
+    !parsed.products.every(isValidProduct)
+  ) {
+    throw new Error("El catálogo guardado no tiene el formato esperado.");
+  }
+  const ids = parsed.products.map((product) => product.id);
+  if (new Set(ids).size !== ids.length) {
+    throw new Error("El catálogo guardado contiene claves repetidas.");
+  }
+  return parsed.products;
+}
+
+function migrateLegacyRecords(catalog) {
   const raw = window.localStorage.getItem(LEGACY_STORAGE_KEY);
   if (raw === null) return [];
 
@@ -119,6 +152,7 @@ function migrateLegacyRecords() {
   }
 
   const now = new Date().toISOString();
+  const productById = new Map(catalog.map((product) => [product.id, product]));
   return Object.entries(parsed.quantities)
     .filter(([productId]) => productById.has(productId))
     .map(([productId, quantity]) => {
@@ -328,6 +362,13 @@ function AppHeader({ user, onLogout, activePage, onPageChange }) {
             >
               <QrCode size={16} aria-hidden="true" /> Catálogo QR
             </button>
+            <button
+              className={`nav-link${activePage === "import" ? " nav-link-active" : ""}`}
+              onClick={() => onPageChange("import")}
+              type="button"
+            >
+              <FileSpreadsheet size={16} aria-hidden="true" /> Cargar XLS
+            </button>
           </nav>
         )}
         <div className="user-menu">
@@ -390,7 +431,7 @@ function ProductQrCard({ product, quantity, registration }) {
   );
 }
 
-function AdminDashboard({ records, setPage }) {
+function AdminDashboard({ records, catalog, setPage }) {
   const [search, setSearch] = useState("");
   const [employeeFilter, setEmployeeFilter] = useState("todos");
   const [expandedRecord, setExpandedRecord] = useState("");
@@ -413,7 +454,7 @@ function AdminDashboard({ records, setPage }) {
     ],
     [activeRecords],
   );
-  const pendingCount = Math.max(0, products.length - activeRecords.length);
+  const pendingCount = Math.max(0, catalog.length - activeRecords.length);
 
   const employees = useMemo(() => {
     const summaries = new Map();
@@ -501,7 +542,7 @@ function AdminDashboard({ records, setPage }) {
       </section>
 
       <section className="metrics-grid" aria-label="Resumen del inventario">
-        <MetricCard icon={QrCode} label="Productos capturados" value={activeRecords.length} detail={`de ${products.length} en el catálogo`} tone="green" />
+        <MetricCard icon={QrCode} label="Productos capturados" value={Math.min(activeRecords.length, catalog.length)} detail={`de ${catalog.length} en el catálogo`} tone="green" />
         <MetricCard icon={Boxes} label="Pendientes de contar" value={pendingCount} detail="productos en esta tarea" tone="blue" />
         <MetricCard icon={Users} label="Registradores activos" value={registeredEmployeeIds.length} detail="con registros en esta tarea" tone="amber" />
       </section>
@@ -660,7 +701,7 @@ function AdminDashboard({ records, setPage }) {
   );
 }
 
-function AdminCatalog({ records }) {
+function AdminCatalog({ records, catalog }) {
   const [search, setSearch] = useState("");
   const inventoryTotals = useMemo(() => {
     const totals = new Map();
@@ -676,7 +717,7 @@ function AdminCatalog({ records }) {
   }, [records]);
   const visibleProducts = useMemo(() => {
     const query = search.trim().toLocaleLowerCase("es");
-    return products
+    return catalog
       .filter(
         (product) =>
           !query ||
@@ -685,7 +726,7 @@ function AdminCatalog({ records }) {
           product.category.toLocaleLowerCase("es").includes(query),
       )
       .sort((a, b) => a.name.localeCompare(b.name, "es"));
-  }, [search]);
+  }, [catalog, search]);
 
   return (
     <main className="dashboard-page">
@@ -695,7 +736,7 @@ function AdminCatalog({ records }) {
           <h1>Productos y códigos QR</h1>
           <p>La etiqueta identifica el producto; la cantidad se captura una vez por tarea.</p>
         </div>
-        <span className="catalog-count"><Boxes size={16} /> {products.length} productos</span>
+        <span className="catalog-count"><Boxes size={16} /> {catalog.length} productos</span>
       </section>
       <label className="search-box catalog-search">
         <Search size={18} aria-hidden="true" />
@@ -724,6 +765,260 @@ function AdminCatalog({ records }) {
         </div>
       )}
       <footer className="app-footer">Los QR conservan la clave del inventario original · La cantidad y unidad se guardan en el registro.</footer>
+    </main>
+  );
+}
+
+function AdminImportCatalog({ catalog, records, onImportProducts }) {
+  const fileInputRef = useRef(null);
+  const [preview, setPreview] = useState(null);
+  const [isReading, setIsReading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  async function handleFile(file) {
+    setError("");
+    setSuccess("");
+    setPreview(null);
+    if (!file) return;
+    setIsReading(true);
+
+    try {
+      const { readInventoryFile } = await import("./inventoryImport.js");
+      const imported = await readInventoryFile(file);
+      const catalogById = new Map(catalog.map((product) => [product.id, product]));
+      const activeRecordById = new Map(
+        records
+          .filter((record) => record.taskId === DEMO_TASK_ID)
+          .map((record) => [record.productId, record]),
+      );
+      const incomingIds = new Set(imported.products.map((product) => product.id));
+      const counts = {
+        added: 0,
+        updated: 0,
+        unchanged: 0,
+        retained: catalog.filter((product) => !incomingIds.has(product.id)).length,
+        protectedUnits: [],
+      };
+      const mergedById = new Map();
+
+      for (const product of imported.products) {
+        const existing = catalogById.get(product.id);
+        if (!existing) {
+          mergedById.set(product.id, product);
+          counts.added += 1;
+          continue;
+        }
+
+        const existingRecord = activeRecordById.get(product.id);
+        const canChangeUnit =
+          !existingRecord || existingRecord.unit === product.unit;
+        const mergedProduct =
+          existingRecord && existing.unit !== product.unit
+            ? { ...product, unit: existing.unit }
+            : product;
+
+        if (existingRecord && existing.unit !== product.unit) {
+          counts.protectedUnits.push({
+            id: product.id,
+            name: product.name,
+            currentUnit: existing.unit,
+            importedUnit: product.unit,
+          });
+        }
+
+        const changed =
+          existing.name !== mergedProduct.name ||
+          existing.category !== mergedProduct.category ||
+          existing.group !== mergedProduct.group ||
+          (canChangeUnit && existing.unit !== mergedProduct.unit);
+        if (changed) {
+          counts.updated += 1;
+        } else {
+          counts.unchanged += 1;
+        }
+        mergedById.set(product.id, mergedProduct);
+      }
+
+      for (const product of catalog) {
+        if (!incomingIds.has(product.id)) {
+          mergedById.set(product.id, product);
+        }
+      }
+
+      const mergedProducts = [
+        ...imported.products.map((product) => mergedById.get(product.id)),
+        ...catalog.filter((product) => !incomingIds.has(product.id)),
+      ];
+      setPreview({
+        fileName: imported.fileName,
+        sheetName: imported.sheetName,
+        skippedRows: imported.skippedRows,
+        importedCount: imported.products.length,
+        counts,
+        mergedProducts,
+        samples: imported.products
+          .slice(0, 5)
+          .map((product) => mergedById.get(product.id)),
+        hasChanges: counts.added > 0 || counts.updated > 0,
+      });
+    } catch (fileError) {
+      console.error("No fue posible validar el inventario Excel seleccionado.", fileError);
+      setError(
+        fileError instanceof Error
+          ? fileError.message
+          : "No se pudo validar el archivo Excel.",
+      );
+    } finally {
+      setIsReading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  }
+
+  function applyImport() {
+    if (!preview || !preview.hasChanges) return;
+    const result = onImportProducts(preview.mergedProducts);
+    if (!result.ok) {
+      setError(result.error);
+      return;
+    }
+    setSuccess(
+      `${preview.counts.added} producto(s) agregados y ${preview.counts.updated} actualizado(s). Se conservaron los productos omitidos y todos los registros existentes.`,
+    );
+    setPreview(null);
+  }
+
+  return (
+    <main className="dashboard-page import-page">
+      <section className="page-intro">
+        <div>
+          <p className="eyebrow">ADMINISTRACIÓN DEL CATÁLOGO</p>
+          <h1>Cargar inventario desde Excel</h1>
+          <p>Actualiza productos desde el formato del inventario y conserva las existencias registradas.</p>
+        </div>
+        <span className="catalog-count"><Boxes size={16} /> {catalog.length} productos actuales</span>
+      </section>
+
+      <div className="import-safety-notice">
+        <ShieldCheck size={19} aria-hidden="true" />
+        <p>
+          <strong>Importación segura por combinación.</strong> Actualiza los
+          productos que aparecen en el archivo, agrega los nuevos y conserva
+          los que no estén incluidos. <b>No</b> cambia cantidades ni historial.
+        </p>
+      </div>
+
+      <section className="import-card">
+        <div className="import-section-heading">
+          <span className="import-section-icon"><FileSpreadsheet size={20} aria-hidden="true" /></span>
+          <span>
+            <h2>Selecciona el archivo del inventario</h2>
+            <p>Se procesa de forma local; el archivo no se envía a un servidor.</p>
+          </span>
+        </div>
+
+        <label className={`import-dropzone${isReading ? " import-dropzone-busy" : ""}`}>
+          <input
+            accept=".xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            disabled={isReading}
+            onChange={(event) => handleFile(event.target.files?.[0])}
+            ref={fileInputRef}
+            type="file"
+          />
+          <span className="import-drop-icon">
+            {isReading ? <span className="import-spinner" /> : <Upload size={23} aria-hidden="true" />}
+          </span>
+          <strong>{isReading ? "Validando el archivo…" : "Selecciona un archivo Excel"}</strong>
+          <span>{isReading ? "Leyendo columnas y revisando claves." : "Formatos .xls y .xlsx · Máximo 10 MB"}</span>
+          {!isReading && <span className="import-choose-button">Elegir archivo</span>}
+        </label>
+
+        <div className="import-format">
+          <strong>Columnas requeridas y opcionales</strong>
+          <div className="import-columns">
+            <span className="import-column-required"><Check size={13} /> clave</span>
+            <span className="import-column-required"><Check size={13} /> descripcion</span>
+            <span>descripciongrupo</span>
+            <span>grupo</span>
+            <span>unidad</span>
+          </div>
+          <p>También se aceptan encabezados como “Descripción”, “Categoría” y “Unidad de medida”. Los productos con claves duplicadas o datos requeridos incompletos se rechazan antes de aplicar cambios.</p>
+        </div>
+      </section>
+
+      {error && <StatusNotice tone="error">{error}</StatusNotice>}
+      {success && <StatusNotice>{success}</StatusNotice>}
+
+      {preview && (
+        <section className="import-preview">
+          <div className="import-preview-header">
+            <div className="import-preview-file">
+              <span className="import-file-icon"><FileSpreadsheet size={18} /></span>
+              <span><strong>{preview.fileName}</strong><small>Hoja: {preview.sheetName} · {preview.importedCount} productos válidos</small></span>
+            </div>
+            <span className="preview-ready"><Check size={14} /> Vista previa lista</span>
+          </div>
+          <div className="import-summary-grid">
+            <div><strong>{preview.counts.added}</strong><span>Nuevos</span></div>
+            <div><strong>{preview.counts.updated}</strong><span>Actualizados</span></div>
+            <div><strong>{preview.counts.unchanged}</strong><span>Sin cambios</span></div>
+            <div><strong>{preview.counts.retained}</strong><span>Conservados, no estaban en el archivo</span></div>
+          </div>
+          {preview.counts.protectedUnits.length > 0 && (
+            <div className="import-unit-warning">
+              <CircleAlert size={16} aria-hidden="true" />
+              <span>
+                La unidad de {preview.counts.protectedUnits.length} producto(s)
+                ya registrado(s) no se cambiará para mantener la cantidad y el
+                historial coherentes. La nueva unidad se podrá aplicar en una
+                tarea futura.
+                {preview.counts.protectedUnits.length <= 3 && (
+                  <small className="import-unit-warning-details">
+                    {" "}
+                    {preview.counts.protectedUnits
+                      .map(
+                        (item) =>
+                          `${item.id}: ${item.currentUnit} (catálogo) en lugar de ${item.importedUnit} (archivo)`,
+                      )
+                      .join("; ")}
+                  </small>
+                )}
+              </span>
+            </div>
+          )}
+          {preview.skippedRows > 0 && (
+            <p className="import-skipped-rows">{preview.skippedRows} fila(s) en blanco ignoradas.</p>
+          )}
+          <div className="import-sample">
+            <h3>Primeros productos que quedarán en el catálogo</h3>
+            <div className="import-sample-list">
+              {preview.samples.map((product) => (
+                <div className="import-sample-row" key={product.id}>
+                  <QRCodeSVG value={product.id} size={27} />
+                  <span><strong>{product.name}</strong><small>Clave {product.id} · {product.category}</small></span>
+                  <span className="import-sample-unit">{product.unit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="import-preview-actions">
+            <p>
+              {preview.hasChanges
+                ? "Revisa los cambios antes de incorporarlos al catálogo."
+                : "El archivo no contiene cambios nuevos para aplicar."}
+            </p>
+            <button
+              className="primary-button import-apply-button"
+              disabled={!preview.hasChanges}
+              onClick={applyImport}
+              type="button"
+            >
+              <Check size={16} /> Aplicar importación
+            </button>
+          </div>
+        </section>
+      )}
+      <footer className="app-footer">Las cantidades e historial de los productos existentes se conservan al actualizar el catálogo.</footer>
     </main>
   );
 }
@@ -847,7 +1142,7 @@ function Scanner({ onScan }) {
   );
 }
 
-function RegistrarDashboard({ user, records, onSaveRecord }) {
+function RegistrarDashboard({ user, records, catalog, onSaveRecord }) {
   const [manualId, setManualId] = useState("");
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState("");
@@ -855,7 +1150,9 @@ function RegistrarDashboard({ user, records, onSaveRecord }) {
   const [message, setMessage] = useState("");
   const [query, setQuery] = useState("");
   const recordsRef = useRef(records);
+  const catalogRef = useRef(catalog);
   recordsRef.current = records;
+  catalogRef.current = catalog;
 
   const currentRecord = useMemo(
     () =>
@@ -883,18 +1180,18 @@ function RegistrarDashboard({ user, records, onSaveRecord }) {
   const suggestions = useMemo(() => {
     const value = query.trim().toLocaleLowerCase("es");
     if (!value) return [];
-    return products
+    return catalog
       .filter(
         (item) =>
           item.id.includes(value) ||
           item.name.toLocaleLowerCase("es").includes(value),
       )
       .slice(0, 5);
-  }, [query]);
+  }, [catalog, query]);
 
   const handleScan = useCallback((code) => {
     const normalizedCode = String(code).trim();
-    const found = productById.get(normalizedCode);
+    const found = catalogRef.current.find((item) => item.id === normalizedCode);
     setMessage("");
     setError("");
     if (!found) {
@@ -1067,7 +1364,9 @@ function RegistrarDashboard({ user, records, onSaveRecord }) {
                     className="my-history-row"
                     key={record.id}
                     onClick={() => {
-                      const found = productById.get(record.productId);
+                      const found = catalogRef.current.find(
+                        (item) => item.id === record.productId,
+                      );
                       if (found) {
                         setProduct(found);
                         setQuantity(String(record.quantity));
@@ -1096,17 +1395,23 @@ function RegistrarDashboard({ user, records, onSaveRecord }) {
 export default function App() {
   const [user, setUser] = useState(null);
   const [records, setRecords] = useState([]);
+  const [catalog, setCatalog] = useState(products);
   const [dataReady, setDataReady] = useState(false);
   const [storageError, setStorageError] = useState("");
   const [activePage, setActivePage] = useState("records");
 
   useEffect(() => {
     try {
+      const savedCatalog = window.localStorage.getItem(CATALOG_STORAGE_KEY);
+      const currentCatalog =
+        savedCatalog === null ? products : parseCatalog(savedCatalog);
+      setCatalog(currentCatalog);
+
       const stored = window.localStorage.getItem(STORAGE_KEY);
       if (stored !== null) {
         setRecords(parseRecords(stored));
       } else {
-        const migrated = migrateLegacyRecords();
+        const migrated = migrateLegacyRecords(currentCatalog);
         setRecords(migrated);
         if (migrated.length) {
           window.localStorage.setItem(
@@ -1127,18 +1432,69 @@ export default function App() {
 
   useEffect(() => {
     function handleStorage(event) {
-      if (event.key !== STORAGE_KEY || event.newValue === null) return;
       try {
-        setRecords(parseRecords(event.newValue));
-        setStorageError("");
+        if (event.key === STORAGE_KEY && event.newValue !== null) {
+          setRecords(parseRecords(event.newValue));
+          setStorageError("");
+        } else if (
+          event.key === CATALOG_STORAGE_KEY &&
+          event.newValue !== null
+        ) {
+          setCatalog(parseCatalog(event.newValue));
+          setStorageError("");
+        }
       } catch (error) {
-        console.error("No fue posible sincronizar el historial entre pestañas.", error);
-        setStorageError("No se pudieron sincronizar los registros guardados en otra pestaña.");
+        console.error("No fue posible sincronizar datos entre pestañas.", error);
+        setStorageError(
+          "No se pudieron sincronizar los datos guardados en otra pestaña.",
+        );
       }
     }
     window.addEventListener("storage", handleStorage);
     return () => window.removeEventListener("storage", handleStorage);
   }, []);
+
+  const importProducts = useCallback(
+    (nextCatalog) => {
+      if (!dataReady || storageError) {
+        return {
+          ok: false,
+          error: "No se puede actualizar el catálogo hasta resolver el error de almacenamiento.",
+        };
+      }
+
+      try {
+        if (
+          nextCatalog.length === 0 ||
+          !nextCatalog.every(isValidProduct) ||
+          new Set(nextCatalog.map((product) => product.id)).size !==
+            nextCatalog.length
+        ) {
+          return {
+            ok: false,
+            error: "El catálogo recibido no es válido y no se aplicaron cambios.",
+          };
+        }
+        window.localStorage.setItem(
+          CATALOG_STORAGE_KEY,
+          JSON.stringify({ version: 1, products: nextCatalog }),
+        );
+        setCatalog(nextCatalog);
+        setStorageError("");
+        return { ok: true };
+      } catch (error) {
+        console.error("No fue posible guardar el catálogo importado.", error);
+        return {
+          ok: false,
+          error:
+            error instanceof DOMException && error.name === "QuotaExceededError"
+              ? "No hay espacio en el almacenamiento del navegador. No se aplicaron cambios."
+              : "No se pudo guardar el catálogo en este navegador. No se aplicaron cambios.",
+        };
+      }
+    },
+    [dataReady, storageError],
+  );
 
   const saveRecord = useCallback(
     (product, quantity, currentUser) => {
@@ -1263,12 +1619,28 @@ export default function App() {
       )}
       {user.role === "admin" ? (
         adminPage === "catalog" ? (
-          <AdminCatalog records={records} />
+          <AdminCatalog records={records} catalog={catalog} />
+        ) : adminPage === "import" ? (
+          <AdminImportCatalog
+            catalog={catalog}
+            records={records}
+            onImportProducts={importProducts}
+          />
         ) : (
-          <AdminDashboard records={records} setPage={setActivePage} />
+          <AdminDashboard
+            catalog={catalog}
+            records={records}
+            setPage={setActivePage}
+          />
         )
       ) : (
-        <RegistrarDashboard key={user.id} user={user} records={records} onSaveRecord={saveRecord} />
+        <RegistrarDashboard
+          key={user.id}
+          catalog={catalog}
+          user={user}
+          records={records}
+          onSaveRecord={saveRecord}
+        />
       )}
     </div>
   );

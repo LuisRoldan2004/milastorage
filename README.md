@@ -39,12 +39,16 @@ El inicio de sesión, los roles y los PIN están simulados en el cliente para fa
 - Consulta los productos registrados, los pendientes y la actividad de cada empleado.
 - Revisa quién realizó la captura original, quién modificó la cantidad y el historial de cambios.
 - Usa **Catálogo QR** para ver el código asociado a cada clave y las cantidades registradas; exporta el historial a CSV.
+- Usa **Cargar XLS** para importar un archivo `.xls` o `.xlsx` con vista previa. Se requieren las columnas `clave` y `descripcion`; `descripciongrupo`, `grupo` y `unidad` son opcionales. Se conservan los ceros iniciales de las claves.
+- La carga combina el archivo con el catálogo actual: actualiza las claves coincidentes, añade las nuevas y conserva los productos omitidos. No modifica las cantidades ni el historial guardados.
+- Para un producto que ya tiene una captura, no se cambia la unidad si el Excel indica otra: la vista previa avisa y conserva la unidad vigente para evitar interpretar mal las cantidades registradas.
+- Archivos de hasta 10 MB. El navegador los lee localmente; no se suben a un servidor. Las claves duplicadas o filas con clave/descripción incompletas rechazan el archivo completo.
 
 ### Cámara en móvil
 
 El navegador solo permite utilizar la cámara en un contexto seguro: `localhost` o una dirección servida por **HTTPS**, y después de otorgar permiso. Una dirección de red local con HTTP normal puede impedir el acceso a la cámara; si eso ocurre, se puede buscar la clave manualmente.
 
-## Actualizar los productos desde Excel
+## Actualizar los productos al desarrollar
 
 Coloca el archivo `.xls` actualizado junto a `inventario03112026.xls` o indica su ruta al importador. El script requiere Python y `xlrd`:
 
